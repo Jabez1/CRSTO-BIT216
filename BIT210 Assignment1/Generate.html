@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Generate Test Report</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="assignment.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="globalTesters.js"></script>
+    <script>
+        function goBack() {
+          window.history.back();
+    }
+    </script>
+</head>
+
+<body onload="generateReport()">
+
+<header>
+<img src="Images/logo.png" alt="logo" id="logo">
+</header>
+<nav class="navbar justify-content-end p-0"> 
+
+    <a href="Generate.html">Generate Report</a>
+    <a onclick="goBack()">Previous Page </a>
+    <a href="CTIndex.html">Log Out </a>
+    
+</nav>
+
+<main>
+    <div class="container d-flex flex-column justify-content-center align-items-center p-4">
+    <h1>Test Report</h1>
+    <div id="container" class="d-flex flex-column bg-light p-5 col-10">
+            <div class="table-responsive p-0 bg-custom">
+                <table class="table" id="testList">
+                        <thead>
+                            <tr>
+                                <th>Test ID</th>
+                                <th>Test Date</th>
+                                <th>Result </th>
+                                <th>Result Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-light">
+                            <td>TXXX</td>
+                            <td>(DDD MM YYYY)</td>
+                            <td></td>
+                            <td>(DDD MM YYYY)</td>
+                            <td></td>
+                        </tbody>
+                </table>
+        </div>
+    
+    </div>
+    </div>
+   
+    </div>
+</main>
+<footer>
+    <p>If there are any issues, contact us at: 012983312
+    </p>
+    Copyright &copy; 2020
+</footer>
+</div>
+</body>
+</html>

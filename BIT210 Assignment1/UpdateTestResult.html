@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Update New Test Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="assignment.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body>
+<header>
+<img src="Images/logo.png" alt="logo" id="logo">
+</header>
+<nav class="navbar justify-content-end p-0"> 
+
+<a href="Generate.html">Generate Report</a>
+<a href="RecordNewTest.html">Record New Tests</a>
+<a href="UpdateTestResult.html">Update Test Results</a>
+<a href="CTIndex.html">Log Out </a>
+</nav>
+        
+<script type="text/javascript" src="globalTesters.js"></script>
+<script type="text/javascript" src="updateTest.js"></script>
+<main>
+<div class="container p-2">
+    <div class="d-flex flex-column align-items-center">
+    <h1 class="p-3">Update Test Results</h1>
+    <br>
+
+    <div class="d-flex flex-column bg-light p-5 col-10">
+    <form class="d-flex flex-column"  onsubmit="findTest()">
+        <div class="form-group">
+            <label>Test ID: </label>
+            <input type="text" id= "testId" class="form-control m-0" placeholder="Enter Test ID">
+        </div>
+        <br>
+        <input type="submit" class="btn w-50 align-self-center mb-5" value="Check">
+    </form>
+
+
+    <div class="table-responsive p-0 bg-custom">
+        <table class="table" id="testList">
+                <thead>
+                    <tr>
+                        <th>Test Date</th>
+                        <th>Result </th>
+                        <th>Result Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-light">
+                    <td>(DDD MM YYYY)</td>
+                    <td>Result </td>
+                    <td>(DDD MM YYYY)</td>
+                    <td>Status</td>
+                </tbody>
+        </table>
+    </div>
+
+    <br>
+    <form class="d-flex flex-column" onsubmit="updateTest()">
+        <div class="form-group">
+            <label>Results: </label>
+            <select class="custom-select" id="results">
+                <option>Positive</option>
+                <option>Negative</option>
+            </select>
+        </div>  
+
+        <br>
+        <input type="submit" class="btn w-50 align-self-center" value="Submit">
+
+    </form>
+        </div>
+    </div>
+</div>
+</main>
+<footer>
+    <p>If there are any issues, contact us at: 012983312
+    </p>
+    Copyright &copy; 2020
+</footer>
+</div>
+</body>
+</html>
