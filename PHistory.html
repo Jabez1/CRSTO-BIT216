@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Testing History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="assignment.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="globalTesters.js"></script>
+    <script type="text/javascript" src="patientFunc.js"></script>
+    
+
+</head>
+
+<body onload="bothFunctions()">
+
+<header>
+<img src="Images/logo.png" alt="LOGO" id="logo">
+</header>
+<nav class="navbar justify-content-end p-0"> 
+    <a href="CTIndex.html">Log Out </a>
+</nav>
+
+
+<main>
+    <div id="container" class="container bg-light">
+        <div class="d-flex justify-content-between p-4">
+            <div class="d-flex flex-column align-items-center p-4 col-5">
+                <h1>Profile Details</h1>
+                <div id="picFrame">
+                    <img src="Images/picture.jpg" onError="this.onerror=null;this.src='Images/defaultPfp.jpg';" />
+                </div>    
+                <label class="align-self-start form" id= "name">Patient Name:</label>
+                <label class="align-self-start" id="id">Patient ID:</label>
+                <label class="align-self-start" id="status">Patient Status:</label>
+                <br>
+                <a class="btn button" href="CTindex.html">Log Out</a>
+            </div>
+    
+            <div class="bg-custom table col-7 p-0" id="patientTable">
+                <table id="patTable" class= "text-light">
+                    <thead>
+                        <tr>
+                            <th> Test ID </th>
+                            <th> Test Date </th>
+                            <th> Result </th>
+                            <th> Date </th>
+                            <th> Status </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                        </tr>    
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>
+    
+</main>
+<footer>
+    <p>If there are any issues, contact us at: 012983312
+    </p>
+    Copyright &copy; 2020
+    </footer>
+</div>
+
+    
+</body>
+
+
+</html>

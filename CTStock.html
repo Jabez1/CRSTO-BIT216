@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Manage Kit Stocks </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="assignment.css">
+</head>
+
+
+<body>
+<header>
+<img src="Images/logo.png" alt="LOGO" id="logo">
+</header>
+<nav class="navbar justify-content-end p-0"> 
+
+    <a href="Generate.html">Generate Report</a>
+    <a href="CTOfficer.html">Manage Officers</a>
+    <a href="CTStock.html">Manage Test Kits</a>
+    <a href="CTRegCentre.html">Register Center</a>
+    <a href="CTIndex.html">Log Out </a>
+</nav>
+
+<main> 
+
+<div id="container" class="container">
+    <h1 class="text-center p-3"> Test Kit Stock Page </h1>
+    
+    <div class="d-flex justify-content-center p-3 bg-light">
+        <div class="bg-light p-5">
+            <form  class="form-group" onsubmit="Jstock()">
+                   
+            <label for="tkId">Test Kit ID</label>
+            <input type="text" name="tkId" id="tkId" class="form-control" >
+        
+            <label for="tkn"> Test Kit Name </label>
+            <input type="text" name="tkn" id="tkn" class="form-control">
+
+            <label for="as"> Available Stock </label>
+            <input type="text" name="as" id="as" class="form-control">
+
+            <input type="submit" value="Submit" class="btn btn-success ">
+            <input type="reset" value="Reset" class="btn btn-warning">
+            </form>
+</div>
+    <div class="bg-custom">
+             <table class="list" id="CTISList">
+                    <thead>
+                        <tr>
+                            <th> Test Kit ID </th>
+                            <th> Test Kit Name </th>
+							<th> Available Stock </th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="text-light">
+
+                    </tbody>
+
+                     
+                </table>
+        
+    </div>  
+
+    <script type="text/javascript" src="CTJavaStock.js"></script> 
+    
+
+
+</main>    
+</body>
+<footer>
+    <p>If there are any issues, contact us at: +60129833123
+    </p>
+    Copyright &copy; 2020
+</footer>
+</div>
+
+</html>
+      
