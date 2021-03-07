@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Organize New Trip </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="assignment.css">
+
+    <script type="text/javascript" src="globalStaff.js"></script>
+</head>
+<body>
+    <header>
+    </header>
+    <nav class="navbar justify-content-end p-0">
+        <a href="CRSTOManageApplication.html">Manage Application</a>
+        <a href="CRSTOIndex.html">Log Out </a>
+        </nav>
+        <body onload="fillTripTable()">
+            <main>
+            <h1 class="text-center p-3"> Organize New Trip</h1>
+            
+            <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-between bg-light p-5 flex-column align-content-sm-center flex-sm-row">
+                    <form  class="form-group col-10 col-md-3 col-lg-5" onsubmit="organizeTrip()">
+                           
+                                
+                            
+                                <label for="TId"> TripID </label>
+                                <input type="text" name="TId" id="TId" class="form-control">
+        
+                                <label for="TDate"> TripDate </label>
+                                <input type="text" name="TDate" id="TDate" class="form-control">
+        
+                                <label for="Des"> Description </label>
+                                <input type="text" name="Des" id="Des" class="form-control">
+        
+                                <label for="Loc"> Location </label>
+                                <input type="text" name="Loc" id="Loc" class="form-control">
+        
+                                <label for="NumV"> Number of Volunteers</label>
+                                <input type="text" name="NumV" id="NumV" class="form-control">
+        
+                                <label for="Critype"> CrisisType</label>
+                                <input type="text" name="Critype" id="Critype" class="form-control">
+                                <br>
+                                <input type="submit" value="Submit" class="btn col-8">
+                                <input type="reset" value="Reset" class="btn col-3 bg-custom">
+                                </form>
+        
+            <div class="table-responsive p-0 bg-custom col-10 col-md-9 col-lg-6">
+                     <table class="table" id="CRSTOLIST">
+                            <thead>
+                                <tr>
+                                    
+                                    <th> TripID </th>
+                                    <th> TripDate </th>
+                                    <th>Description</th>
+                                    <th> Location </th>
+                                    <th> Number of Volunteers </th>
+                                    <th> CrisisType </th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-light">
+        
+                            </tbody>
+                            
+                        </table>
+                </div>
+            </div>  
+        
+            <script type="text/javascript" src="OrganizeTrip.js"></script> 
+        
+        </main>
+        <footer>
+            <p>If there are any issues, contact us at: 012983312
+            </p>
+            Copyright &copy; 2020
+            </footer>
+        </body>
+        
+            
+        
+        </div>
+        
+        </html>
