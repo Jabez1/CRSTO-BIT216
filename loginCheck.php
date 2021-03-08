@@ -1,8 +1,8 @@
 <?php
 include_once 'database.php';
 session_start();
-$username = $_POST['userName'];
-$password = $_POST['ctrPass'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 $_SESSION["loginFail"] = 1;
 
 
