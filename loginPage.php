@@ -28,7 +28,6 @@ if(isset($_SESSION['loginFail'])){
 
     <main class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column container justify-content-center bg-light p-5 align-middle w-50">
-        <a href= "volsignUpPage.php" class="btn button"> Sign Up<a>
         <h1 class="text-center">Login</h1>
         <div class="p-3">  
 
@@ -40,6 +39,7 @@ if(isset($_SESSION['loginFail'])){
                 <br>
                 <div class= "d-flex justify-content-center">
                     <input type="submit" value="Log in" class="btn">
+                    <a href= "volsignUpPage.php" class="btn button"> Sign Up<a>
                 </div>
             </form>
         </div>

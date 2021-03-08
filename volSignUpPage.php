@@ -45,42 +45,30 @@ if(isset($_SESSION['errorType'])){
         <h1 class="p-3">Enter Volunteer Details</h1>
         <br>
 
-    <form form action="testRecord.php" method="post" class="d-flex flex-column bg-light p-5 col-10">
+    <form form action="volSignUp.php" method="post" class="d-flex flex-column bg-light p-5 col-10">
         <div class="form-group">
             <label>Username: </label>
             <input type="text" name= "username" class="form-control" placeholder="Enter Username">   
         </div>
 
-        <div class="form-group newPat">
+        <div class="form-group">
             <label>Password: </label>
-            <input type="password" name= "password" class="form-control" placeholder="Enter Password">   
+            <input type="password" name= "userpass" class="form-control" placeholder="Enter Password">   
         </div>  
 
-        <div class="form-group newPat">
+        <div class="form-group">
+            <label>Password: </label>
+            <input type="password" name= "userpass" class="form-control" placeholder="Enter Password">   
+        </div>  
+
+        <div class="form-group">
             <label>Full Name: </label>
             <input type="text" name= "fullName" class="form-control" placeholder="Enter Full Name">   
         </div>  
-
         <div class="form-group">
-            <label>Symptoms: </label>
-            <input type="text" name= "symptoms" class="form-control" placeholder="Enter All Observed Symptoms (Separated by commas) ">   
+            <label>Phone Number: </label>
+            <input type="text" name= "phone" class="form-control" placeholder="Enter Phone Number">   
         </div>  
-
-        <div class="form-group">
-            <label>Patient Type: </label>
-            <select onchange="showRegister()"  class="custom-select" name="type" id="type">
-                <option>Suspected</option>
-                <option selected>Returnee</option>
-                <option>Quarantined</option>
-                <option>Close Contact</option>
-                <option>Infected</option>
-            </select>
-        </div>  
-
-        <div class="form-group">
-            <label>Comments: </label>
-            <input type="text" name= "comments" class="form-control" placeholder="Enter Comments (If Any)">   
-        </div>
         <br>
         <input type="submit" class="btn w-50 align-self-center" placeholder="Enter Comments (If Any)">
         
