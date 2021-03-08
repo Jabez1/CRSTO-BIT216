@@ -16,12 +16,25 @@ $sql = "UPDATE worker
 
 
 if ($connection->query($sql) === TRUE) {
-    echo "Edited successfuly";
+    echo "Updated successfuly";
     
 } else {
     echo "Error: " . $sql . "<br>" . $connection->error;
 }
 
+//resets username and profile session variables
+$sql = "SELECT * FROM worker";
 
-header("Location:volunteerPage.php");
+$result = $connection->query($sql);
+
+while ($row =  $result->fetch_assoc() ) {
+    if ($row['username']== $username) {
+        echo "Updated sucessfully";
+        //sets session variable username
+        $_SESSION['username'] = $username;
+        $_SESSION['profile'] = $row;
+    }
+}
+
+header("Location:volPage.php");
 ?>
