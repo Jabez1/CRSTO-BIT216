@@ -30,7 +30,7 @@ session_start();
                 <label class="align-self-start" id="id">Username:  <?php echo $_SESSION['profile']['username']; ?></label>
                 <label class="align-self-start" id="status">Phone Number:  <?php echo $_SESSION['profile']['phone']; ?></label>
                 <br>
-                <a class="btn button" href="updateVolunteerPage.php">Manage Profile</a>
+                <a class="btn button" href="volUpdatePage.php">Manage Profile</a>
                 <!-- documents use case <a class="btn button" href="manageDocuments.php">Manage Documents</a>-->
             </div>
         

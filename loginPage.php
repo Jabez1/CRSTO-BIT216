@@ -28,6 +28,7 @@ if(isset($_SESSION['loginFail'])){
 
     <main class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column container justify-content-center bg-light p-5 align-middle w-50">
+        <a href= signUpPage.php class="btn button"> Sign Up<a>
         <h1 class="text-center">Login</h1>
         <div class="p-3">  
 

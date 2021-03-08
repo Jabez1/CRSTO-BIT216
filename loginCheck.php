@@ -19,7 +19,8 @@ while ( $row =  $result->fetch_assoc() ) {
         $_SESSION['profile'] = $row;
         //check workerType
         if($row['workerType']== "Volunteer"){
-            header("Location:volunteerPage.php");
+            $_SESSION["loginFail"] = 0;
+            header("Location:volPage.php");
         }
         else{
             if($row['workerType']!= "Manager"){
