@@ -28,7 +28,7 @@ session_start();
                 </div>    
                 <label class="align-self-start" id= "name">Full Name: <?php echo $_SESSION['profile']['fullName']; ?></label>
                 <label class="align-self-start" id="id">Username:  <?php echo $_SESSION['profile']['username']; ?></label>
-                <label class="align-self-start" id="status">Phone Number:  <?php echo $_SESSION['profile']['phoneNo']; ?></label>
+                <label class="align-self-start" id="status">Phone Number:  <?php echo $_SESSION['profile']['phone']; ?></label>
                 <br>
                 <a class="btn button" href="Logout.php">Log Out</a>
             </div>

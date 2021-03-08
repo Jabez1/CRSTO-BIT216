@@ -6,7 +6,7 @@ $password = $_POST['userpass'];
 $_SESSION["loginFail"] = 1;
 
 
-$sql = "SELECT username, userpass, workerType, position FROM worker";
+$sql = "SELECT * FROM worker";
 
 $result = $connection->query($sql);
 
