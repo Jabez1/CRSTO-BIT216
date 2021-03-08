@@ -13,18 +13,8 @@
 session_start();
 if(isset($_SESSION['errorType'])){
     if($_SESSION['errorType']==1){
-        echo '<script> alert("The returnee username does not exist"); </script>';
-    }
-    elseif($_SESSION['errorType']==2){
         echo '<script>alert("The username is in use");</script>';
     }
-    elseif($_SESSION['errorType']==3){
-        echo '<script>alert("Success!");</script>';
-    }
-    elseif($_SESSION['errorType']==4){
-        echo '<script>alert("Password field cannot be empty!");</script>';
-    }
-    unset($_SESSION['errorType']);
 }
 ?>
 <body>
@@ -57,8 +47,8 @@ if(isset($_SESSION['errorType'])){
         </div>  
 
         <div class="form-group">
-            <label>Password: </label>
-            <input type="password" name= "userpass" class="form-control" placeholder="Enter Password">   
+            <label>Confirm Password: </label>
+            <input type="password" name= "userpass2" class="form-control" placeholder="Enter Password">   
         </div>  
 
         <div class="form-group">
