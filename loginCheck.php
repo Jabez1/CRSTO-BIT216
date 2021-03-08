@@ -2,50 +2,35 @@
 include_once 'database.php';
 session_start();
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = $_POST['userpass'];
 $_SESSION["loginFail"] = 1;
 
 
-$sql = "SELECT userName, password, position FROM officer";
+$sql = "SELECT userName, userpass, workerType, position FROM worker";
 
 $result = $connection->query($sql);
 
 while ( $row =  $result->fetch_assoc() ) {
-    
+    //checks from worker table
     if ($row["userName"]== $username && $row["password"]==$password) {
         echo "Login Successful";
         $_SESSION["username"] = $username;
-
-        if($row["position"]== "tester"){
-            //this Session variable is called here to identify future errors
-            $_SESSION["loginFail"] = 0;
-            header("Location:CTRecordNewTest.php");
+        //check workerType
+        if($row["workerType"]== "Volunteer"){
+            header("Location:volunteerProfile.php");
         }
-        elseif($row["position"]== "manager"){
-            $_SESSION["loginFail"] = 0;
-            header("Location:insertRegister.php");
-        }
-        
-    } 
+        else{
+            if($row["position"]!= "manager"){
+                //this Session variable is called here to identify future errors
+                $_SESSION["loginFail"] = 0;
+                header("Location:staffPage.php");
+            }
+            elseif($row["position"]== "manager"){
+                $_SESSION["loginFail"] = 0;
+                header("Location:managerPage.php");
+            }  
+        } 
 }
-
-$sql = "SELECT * FROM patient";
-
-$result = $connection->query($sql);
-
-while ( $row =  $result->fetch_assoc() ) {
-    if ($row["userName"]== $username && $row["password"]==$password) {
-        echo "Login Successful";
-        //After login the following php file will retrieve the patient's test info
-        $_SESSION["user"] = $username;
-        $_SESSION["info"] = $row;
-        $_SESSION["test"] = $result;
-        
-        $_SESSION["loginFail"] = 0;
-        header("Location:getPatientTest.php");
-    } 
-}
-
 
 //loginFail will be set to 0 if Login is successful
 if($_SESSION['loginFail']==1){
