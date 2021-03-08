@@ -3,20 +3,19 @@ include_once 'database.php';
 session_start();
 
 //Get test table
-$sql = "SELECT * FROM test";
+$sql = "SELECT * FROM worker";
 
-//this line is to clear testArray whenever this php file is called
-$_SESSION['testArray']= [];
+//this line is to reinitialize volInfo  whenever this php file is called
+//$_SESSION['volInfo']= [];
 $result = $connection->query($sql);
-
-//this adds the sql table to an Array
-while($test = $result->fetch_assoc()) {
-    if($test['patientID']== $_SESSION["info"]['patientID']){
-        $_SESSION['testArray'][] = $test;
+/*
+while($row = $result->fetch_assoc()) {
+    if($row['username']== $_SESSION["username"];){
+        $_SESSION['volInfo'] = $test;
     }
-    
 }
+*/
 
 //This will immediately go to Patient History page
-header("Location:CTPHistory.php");
+header("Location:volunteerProfile.php");
 ?>

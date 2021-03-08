@@ -10,7 +10,7 @@ session_start();
     <link href="assignment.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body onload="getPatientTest.php">
+<body onload="getVolunteerInfo.php">
 <header>
 <img src="Images/logo.png" alt="LOGO" id="logo">
 </header>
@@ -26,9 +26,9 @@ session_start();
                 <div id="picFrame">
                     <img src="Images/picture.jpg" onError="this.onerror=null;this.src='Images/defaultPfp.jpg';" />
                 </div>    
-                <label class="align-self-start" id= "name">Patient Name: <?php echo $_SESSION['info']['fullName']; ?></label>
-                <label class="align-self-start" id="id">Patient ID:  <?php echo $_SESSION['info']['patientID']; ?></label>
-                <label class="align-self-start" id="status">Patient Status:  <?php echo $_SESSION['info']['type']; ?></label>
+                <label class="align-self-start" id= "name">Full Name: <?php echo $_SESSION['profile']['fullName']; ?></label>
+                <label class="align-self-start" id="id">Username:  <?php echo $_SESSION['profile']['username']; ?></label>
+                <label class="align-self-start" id="status">Phone Number:  <?php echo $_SESSION['profile']['phoneNo']; ?></label>
                 <br>
                 <a class="btn button" href="Logout.php">Log Out</a>
             </div>
@@ -37,11 +37,11 @@ session_start();
                 <table id="patTable" class= "text-light">
                     <thead>
                         <tr>
-                            <th> Test ID </th>
-                            <th> Test Date </th>
-                            <th> Result </th>
-                            <th> Result Date </th>
+                            <th> Application ID </th>
+                            <th> Application Date </th>
                             <th> Status </th>
+                            <th> Review Date </th>
+                            <th> Remarks </th>
                         </tr>
                     </thead>
                     <tbody>

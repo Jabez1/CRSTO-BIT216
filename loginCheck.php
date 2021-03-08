@@ -14,7 +14,9 @@ while ( $row =  $result->fetch_assoc() ) {
     //checks from worker table
     if ($row["username"]== $username && $row["userpass"]==$password) {
         echo "Login Successful";
+        //sets session variable username
         $_SESSION["username"] = $username;
+        $_SESSION["profile"] = $row;
         //check workerType
         if($row["workerType"]== "Volunteer"){
             header("Location:volunteerProfile.php");
@@ -23,11 +25,11 @@ while ( $row =  $result->fetch_assoc() ) {
             if($row["position"]!= "manager"){
                 //this Session variable is called here to identify future errors
                 $_SESSION["loginFail"] = 0;
-                header("Location:staffPage.php");
+                //header("Location:staffPage.php");
             }
             elseif($row["position"]== "manager"){
                 $_SESSION["loginFail"] = 0;
-                header("Location:managerPage.php");
+                //header("Location:managerPage.php");
             }  
         } 
 }
@@ -35,7 +37,7 @@ while ( $row =  $result->fetch_assoc() ) {
 
 //loginFail will be set to 0 if Login is successful
 if($_SESSION['loginFail']==1){
-header("Location:loginPage.php");
+//header("Location:loginPage.php");
 echo "Invalid Login";
 
 }
