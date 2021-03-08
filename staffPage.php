@@ -57,9 +57,9 @@
                             <th> Password </th>
 							<th> FullName </th>
 							<th> Phone </th>
-                            <th> WokerType </th>
+                            <th> WorkerType </th>
                             <th> Position </th>
-                            <th> Datejoined </th>
+                            <th> Date Joined </th>
                         </tr>
                     </thead>
                     <tbody class="text-light">

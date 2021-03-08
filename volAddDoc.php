@@ -13,7 +13,7 @@ if (isset($_POST['upload'])) {
     $imgFolder = "Images/".$filename;
 
     // Get all the submitted data from the form 
-    $sql = "INSERT INTO document (documentType, expiryDate, imgFile, username) VALUES ('passport', '2020/10/10', '$filename', 'Vol1')"; 
+    $sql = "INSERT INTO document (documentType, expiryDate, imgFile, username) VALUES ('$documentType', '$expiryDate', '$filename', '$username')"; 
     if ($connection->query($sql) === TRUE) {
         echo "Image added to database";
     } else {
