@@ -19,7 +19,7 @@ while ( $row =  $result->fetch_assoc() ) {
         $_SESSION["profile"] = $row;
         //check workerType
         if($row["workerType"]== "Volunteer"){
-            header("Location:volunteerProfile.php");
+            header("Location:volunteerPage.php");
         }
         else{
             if($row["workerType"]!= "Manager"){
