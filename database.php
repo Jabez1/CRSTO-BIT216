@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$database = "BIT216";
+$database = "bit216";
 $user = "root";
 $pass = "";
 
