@@ -3,8 +3,6 @@
 include_once 'database.php';
 session_start();
 
-$sql = "SELECT * FROM Document Where username = '{$_SESSION['username']}'"
-
 ?>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -42,9 +40,12 @@ $sql = "SELECT * FROM Document Where username = '{$_SESSION['username']}'"
                    <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $_SESSION['profile']['phone']; ?>">
 
                    <br>
-                   <input type="submit" value="Submit" class="btn col-12">
+                   <input type="submit" value="Submit" class="btn col-5">
+                   <a class="btn button" href="volPage.php">Back</a>
                    </form>
-                   <div class="table-responsive p-0 bg-custom col-12 ">
+            <div>
+
+            <div class="table-responsive p-0 bg-custom col-12 ">
              <table class="table" id="CRSTOList">
                     <thead>
                         <tr>
@@ -55,7 +56,6 @@ $sql = "SELECT * FROM Document Where username = '{$_SESSION['username']}'"
                     </thead>
                     <tbody class="text-light">
 					<?php
-                     if(isset($_SESSION['docArray'])){
                         foreach ($_SESSION['docArray'] as $index => $arrayRow) {
                             echo '<tr>';
                             echo '<td>'. $arrayRow['documentID'] .'</td>';
@@ -63,13 +63,19 @@ $sql = "SELECT * FROM Document Where username = '{$_SESSION['username']}'"
                             echo '<td>'. $arrayRow['expiryDate'] .'</td>';
                             echo '</tr>';
                      }
-                     }
+                     
                         ?>
                     </tbody>
                     
                 </table>
+                <br>
+                
                 <!-- documents use case <a class="btn button" href="manageDocuments.php">Manage Documents</a>-->
             </div>
+            <a class="btn button" href="volAddDoc.php">Add Document</a>
+            </div>
+            
+            
         
             <!-- 
             <div class="bg-custom table col col-sm-12 col-md-7 p-0" id="applicationTable">

@@ -14,14 +14,12 @@
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
-    <a href="testGenerate.php"> 
+    <a> 
         <?php
         session_start();
         echo"Welcome {$_SESSION['username']}";
         ?>       
     </a>
-    <a href="volSignUpPage.php">Sign Up</a>
-    <a href="CTUpdateTestResult.php">Update Test Results</a>
     <a href="Logout.php">Log Out </a>
 </nav>
 <main>
