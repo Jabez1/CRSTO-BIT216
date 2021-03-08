@@ -30,7 +30,23 @@ session_start();
                 <label class="align-self-start" id="id">Username:  <?php echo $_SESSION['profile']['username']; ?></label>
                 <label class="align-self-start" id="status">Phone Number:  <?php echo $_SESSION['profile']['phone']; ?></label>
                 <br>
-                <a class="btn button" href="updateVolunteerPage.php">Manage Profile</a>
+                <a class="btn button" href="manageProfile.php">Manage Profile</a>
+                <form  class="form-group col-10 col-md-3 col-lg-5" action="updateVolunteerProfile.php" method="post">
+                   <label for="username"> Username </label>
+                   <input type="text" name="username" id="username" class="form-control" value="<?php echo $_SESSION['profile']['username']; ?>">
+
+                   <label for="userpass"> Password </label>
+                   <input type="text" name="userpass" id="userpass" class="form-control">
+
+                   <label for="fullname"> Full Name </label>
+                   <input type="text" name="fullname" id="fullname" class="form-control" value="<?php echo $_SESSION['profile']['fullName']; ?>">
+
+                   <label for="phone"> Phone Number </label>
+                   <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $_SESSION['profile']['phone']; ?>">
+
+                   <br>
+                   <input type="submit" value="Submit" class="btn col-8">
+                   </form>
                 <!-- documents use case <a class="btn button" href="manageDocuments.php">Manage Documents</a>-->
             </div>
         
