@@ -33,9 +33,9 @@ if(isset($_SESSION['loginFail'])){
 
             <form class="form-group" action="Login.php" method="post">
                 <label for="userName">Username</label>
-                <input type="text" name="userName" id="userName" placeholder="Enter Username" class="form-control" >
+                <input type="text" name="username" id="username" placeholder="Enter Username" class="form-control" >
                 <label for="ctrPass"> Password </label>
-                <input type="password" name="ctrPass" id="ctrPass" placeholder="Enter Password" class="form-control" >
+                <input type="password" name="password" id="ctrPass" placeholder="Enter Password" class="form-control" >
                 <br>
                 <div class= "d-flex justify-content-center">
                     <input type="submit" value="Log in" class="btn">
