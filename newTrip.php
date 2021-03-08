@@ -1,100 +1,92 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>Record New Test Results</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="assignment.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="inputDisplay.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Organize New Trip </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="assignment.css">
 </head>
-<?php 
-session_start();
-if(isset($_SESSION['errorType'])){
-    if($_SESSION['errorType']==1){
-        echo '<script> alert("The returnee username does not exist"); </script>';
-    }
-    elseif($_SESSION['errorType']==2){
-        echo '<script>alert("The username is in use");</script>';
-    }
-    elseif($_SESSION['errorType']==3){
-        echo '<script>alert("Success!");</script>';
-    }
-    elseif($_SESSION['errorType']==4){
-        echo '<script>alert("Password field cannot be empty!");</script>';
-    }
-    unset($_SESSION['errorType']);
-}
-?>
+
 <body>
 <header>
-<img src="Images/logo.png" alt="logo" id="logo">
 </header>
-<nav class="navbar justify-content-end p-0"> 
-    <a href="testGenerate.php">Generate Report</a>
-    <a href="CTRecordNewTest.php">Record New Tests</a>
-    <a href="CTUpdateTestResult.php">Update Test Results</a>
+<nav class="navbar justify-content-end p-0">
+    <a href="ManageApplication.php">Manage Application </a>
     <a href="Logout.php">Log Out </a>
-</nav>
-<main>
-    <div class="container p-2 col-3 col-sm-5 col-md-7">
-        <div class="d-flex flex-column align-items-center">
+    </nav>
+<body>
+    <main>
+    <h1 class="text-center p-3"> Organize New Trip</h1>
+    
+    <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-between bg-light p-5 flex-column align-content-sm-center flex-sm-row">
+            <form  class="form-group col-10 col-md-3 col-lg-5" action="insertTrip.php" method="post">
+                    
+                        <label for="tripID"> Trip ID </label>
+                        <input type="text" name="tripID" id="tripID" class="form-control">
 
-        
-        <h1 class="p-3">Enter Patient Details</h1>
-        <br>
+						<label for="description"> Description </label>
+                        <input type="text" name="description" id="description" class="form-control">
 
-    <form form action="testRecord.php" method="post" class="d-flex flex-column bg-light p-5 col-10">
-        <div class="form-group">
-            <label>Username: </label>
-            <input type="text" name= "username" class="form-control" placeholder="Enter Username">   
+						<label for="tripDate"> Trip Date </label>
+                        <input type="text" name="tripDate" id="tripDate" class="form-control">
+
+						<label for="locatio"> Location </label>
+                        <input type="text" name="location" id="location" class="form-control">
+
+                        <label for="numVolunteers"> NumVolunteers </label>
+                        <input type="text" name="numVolunteers" id="numVolunteers" class="form-control">
+
+                        <label for="username"> userName </label>
+                        <input type="text" name="username" id="username" class="form-control">
+
+                        <br>
+                        <input type="submit" value="Submit" class="btn col-8">
+                        <input type="reset" value="Reset" class="btn col-3 bg-custom">
+						</form>
+
+    <div class="table-responsive p-0 bg-custom col-10 col-md-9 col-lg-6">
+             <table class="table" id="CRSTOList">
+                    <thead>
+                        <tr>
+                            <th> Trip ID </th>
+                            <th> Description </th>
+							<th> Trip Date </th>
+							<th> Location </th>
+                            <th> NumVolunteers </th>
+                            <th> userName </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-light">
+					<?php
+					 session_start();
+                        foreach ($_SESSION['tripArray'] as $index => $arrayRow) {
+                            echo '<tr>';
+                            echo '<td>'. $arrayRow['tripID'] .'</td>';
+                            echo '<td>'. $arrayRow['description'] .'</td>';
+                            echo '<td>'. $arrayRow['tripDate'] .'</td>';
+                            echo '<td>'. $arrayRow['location'] .'</td>';
+                            echo '<td>'. $arrayRow['numVolunteers'] .'</td>';
+                            echo '<td>'. $arrayRow['username'] .'</td>';
+                            echo '</tr>';
+                     }
+                        ?>
+                    </tbody>
+                    
+                </table>
         </div>
-
-        <div class="form-group newPat">
-            <label>Password: </label>
-            <input type="password" name= "password" class="form-control" placeholder="Enter Password">   
-        </div>  
-
-        <div class="form-group newPat">
-            <label>Full Name: </label>
-            <input type="text" name= "fullName" class="form-control" placeholder="Enter Full Name">   
-        </div>  
-
-        <div class="form-group">
-            <label>Symptoms: </label>
-            <input type="text" name= "symptoms" class="form-control" placeholder="Enter All Observed Symptoms (Separated by commas) ">   
-        </div>  
-
-        <div class="form-group">
-            <label>Patient Type: </label>
-            <select onchange="showRegister()"  class="custom-select" name="type" id="type">
-                <option>Suspected</option>
-                <option selected>Returnee</option>
-                <option>Quarantined</option>
-                <option>Close Contact</option>
-                <option>Infected</option>
-            </select>
-        </div>  
-
-        <div class="form-group">
-            <label>Comments: </label>
-            <input type="text" name= "comments" class="form-control" placeholder="Enter Comments (If Any)">   
-        </div>
-        <br>
-        <input type="submit" class="btn w-50 align-self-center" placeholder="Enter Comments (If Any)">
-        
-        
-    </form>
-        </div>
-    </div>
-
+    </div>  
 </main>
 <footer>
     <p>If there are any issues, contact us at: 012983312
     </p>
     Copyright &copy; 2020
-</footer>
-</div>
+    </footer>
 </body>
+
+    
+
+</div>
+
 </html>

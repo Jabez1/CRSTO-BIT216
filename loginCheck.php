@@ -26,11 +26,11 @@ while ( $row =  $result->fetch_assoc() ) {
             if($row['position']!= "Manager"){
                 //this Session variable is called here to identify future errors
                 $_SESSION["loginFail"] = 0;
-                header("Location:staffPage.php");
+                header("Location:newTrip.php");
             }
-            elseif($row['position']== "manager"){
+            elseif($row['position']== "Manager"){
                 $_SESSION['loginFail'] = 0;
-                //header("Location:managerPage.php");
+                header("Location:staffPage.php");
             }  
         } 
 }

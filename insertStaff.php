@@ -2,13 +2,22 @@
 include_once 'database.php';
 session_start();
 
-$workerID = $_POST['workerID'];
 $userName = $_POST['username'];
 $password = $_POST['userpass'];
-$fullname = $_POST['fullname'];
-$position = $_POST['position'];
+$fullname = $_POST['fullName'];
 $phone = $_POST['phone'];
-$datejoined = $_POST['datejoined'];
+$workerType = $_POST['workerType'];
+$position = $_POST['position'];
+$dateJoined = $_POST['dateJoined'];
+
+
+$sql = "INSERT INTO worker (username, userpass, fullName, phone, workerType, position, dateJoined) VALUES ('$userName', '$password', '$fullname', '$phone', '$workerType', '$position', '$dateJoined');";
+if ($connection->query($sql) === TRUE) {
+    echo "Added successfuly";
+    
+} else {
+    echo "Error: " . $sql . "<br>" . $connection->error;
+}
 
 $sql = "SELECT * FROM worker";
 $_SESSION['workerArray']= [];
@@ -16,14 +25,6 @@ $_SESSION['workerArray']= [];
 $result = $connection->query($sql);
 while ( $row =  $result->fetch_assoc() ) {
     $_SESSION["workerArray"][] = $row;
-}
-
-$sql = "INSERT INTO worker (workerID, username, userpass, fullname, position, phone, datejoined) VALUES ('$workerID', '$userName', '$password', '$fullname', '$position', '$phone', '$datejoined');";
-if ($connection->query($sql) === TRUE) {
-    echo "Added successfuly";
-    
-} else {
-    echo "Error: " . $sql . "<br>" . $connection->error;
 }
 
 header("Location:staffPage.php");
