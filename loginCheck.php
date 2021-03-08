@@ -22,10 +22,10 @@ while ( $row =  $result->fetch_assoc() ) {
             header("Location:volunteerProfile.php");
         }
         else{
-            if($row["position"]!= "manager"){
+            if($row["workerType"]!= "Manager"){
                 //this Session variable is called here to identify future errors
                 $_SESSION["loginFail"] = 0;
-                //header("Location:staffPage.php");
+                header("Location:staffPage.php");
             }
             elseif($row["position"]== "manager"){
                 $_SESSION["loginFail"] = 0;

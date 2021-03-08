@@ -2,21 +2,23 @@
 include_once 'database.php';
 session_start();
 
-$workerID = $_POST['ctrId'];
-$userName = $_POST['usern'];
-$password = $_POST['Psw'];
-$fullname = $_POST['Ofn'];
-$position = $_POST['Pos'];
+$workerID = $_POST['workerID'];
+$userName = $_POST['username'];
+$password = $_POST['userpass'];
+$fullname = $_POST['fullname'];
+$position = $_POST['position'];
+$phone = $_POST['phone'];
+$datejoined = $_POST['datejoined'];
 
-$sql = "SELECT * FROM officer";
-$_SESSION['officerArray']= [];
+$sql = "SELECT * FROM worker";
+$_SESSION['workerArray']= [];
 
 $result = $connection->query($sql);
 while ( $row =  $result->fetch_assoc() ) {
-    $_SESSION["officerArray"][] = $row;
+    $_SESSION["workerArray"][] = $row;
 }
 
-$sql = "INSERT INTO officer (workerID, userName, password, fullname, position) VALUES ($workerID, '$userName', '$password', '$fullname', '$position');";
+$sql = "INSERT INTO worker (workerID, username, userpass, fullname, position, phone, datejoined) VALUES ('$workerID', '$userName', '$password', '$fullname', '$position', '$phone', '$datejoined');";
 if ($connection->query($sql) === TRUE) {
     echo "Added successfuly";
     
@@ -24,6 +26,6 @@ if ($connection->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $connection->error;
 }
 
-header("Location:CTOfficer.php");
+header("Location:staffPage.php");
 
 ?>
