@@ -31,11 +31,11 @@ if(isset($_SESSION['loginFail'])){
         <h1 class="text-center">Login</h1>
         <div class="p-3">  
 
-            <form class="form-group" action="Login.php" method="post">
+            <form class="form-group" action="loginCheck.php" method="post">
                 <label for="userName">Username</label>
                 <input type="text" name="username" id="username" placeholder="Enter Username" class="form-control" >
                 <label for="userpass"> Password </label>
-                <input type="userpass" name="password" id="userpass" placeholder="Enter Password" class="form-control" >
+                <input type="userpass" name="userpass" id="userpass" placeholder="Enter Password" class="form-control" >
                 <br>
                 <div class= "d-flex justify-content-center">
                     <input type="submit" value="Log in" class="btn">

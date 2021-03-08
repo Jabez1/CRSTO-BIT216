@@ -6,13 +6,13 @@ $password = $_POST['userpass'];
 $_SESSION["loginFail"] = 1;
 
 
-$sql = "SELECT userName, userpass, workerType, position FROM worker";
+$sql = "SELECT username, userpass, workerType, position FROM worker";
 
 $result = $connection->query($sql);
 
 while ( $row =  $result->fetch_assoc() ) {
     //checks from worker table
-    if ($row["userName"]== $username && $row["password"]==$password) {
+    if ($row["username"]== $username && $row["userpass"]==$password) {
         echo "Login Successful";
         $_SESSION["username"] = $username;
         //check workerType
@@ -30,6 +30,7 @@ while ( $row =  $result->fetch_assoc() ) {
                 header("Location:managerPage.php");
             }  
         } 
+}
 }
 
 //loginFail will be set to 0 if Login is successful
