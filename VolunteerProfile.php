@@ -30,10 +30,11 @@ session_start();
                 <label class="align-self-start" id="id">Username:  <?php echo $_SESSION['profile']['username']; ?></label>
                 <label class="align-self-start" id="status">Phone Number:  <?php echo $_SESSION['profile']['phone']; ?></label>
                 <br>
-                <a class="btn button" href="Logout.php">Log Out</a>
+                <!-- documents use case <a class="btn button" href="manageDocuments.php">Manage Documents</a>-->
             </div>
         
-            <div class="bg-custom table col col-sm-12 col-md-7 p-0" id="patientTable">
+            <!-- 
+            <div class="bg-custom table col col-sm-12 col-md-7 p-0" id="applicationTable">
                 <table id="patTable" class= "text-light">
                     <thead>
                         <tr>
@@ -66,6 +67,7 @@ session_start();
                     </tbody>
                 </table>
             </div>
+                    -->
         </div>    
     </div>
     
