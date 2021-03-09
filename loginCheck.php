@@ -38,7 +38,7 @@ while ( $row =  $result->fetch_assoc() ) {
 
 //loginFail will be set to 0 if Login is successful
 if($_SESSION['loginFail']==1){
-//header("Location:loginPage.php");
+header("Location:loginPage.php");
 echo "Invalid Login";
 
 }

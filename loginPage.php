@@ -14,6 +14,7 @@ session_start();
 if(isset($_SESSION['loginFail'])){
     if($_SESSION['loginFail']==1){
         echo '<script> alert("Invalid login details"); </script>';
+        unset($_SESSION['loginFail']);
     }
 }
 
