@@ -13,12 +13,6 @@
 <header>
 </header>
 <nav class="navbar justify-content-end p-0">
-    <a> 
-        <?php
-        session_start();
-        echo"Welcome {$_SESSION['username']}";
-        ?>       
-    </a>
     <a href="Logout.php">Log Out </a>
     </nav>
 <body>
