@@ -22,10 +22,7 @@ if(isset($_SESSION['errorType'])){
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
-    <a href="testGenerate.php">Generate Report</a>
-    <a href="CTRecordNewTest.php">Record New Tests</a>
-    <a href="CTUpdateTestResult.php">Update Test Results</a>
-    <a href="Logout.php">Log Out </a>
+    <a href="Logout.php">Exit </a>
 </nav>
 <main>
     <div class="container p-2 col-3 col-sm-5 col-md-7">

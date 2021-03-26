@@ -13,6 +13,12 @@
 <header>
 </header>
 <nav class="navbar justify-content-end p-0">
+    <a> 
+        <?php
+        session_start();
+        echo"Welcome {$_SESSION['username']}";
+        ?>       
+    </a>
     <a href="Logout.php">Log Out </a>
     </nav>
 <body>
@@ -57,9 +63,9 @@
                             <th> Password </th>
 							<th> FullName </th>
 							<th> Phone </th>
-                            <th> WokerType </th>
+                            <th> WorkerType </th>
                             <th> Position </th>
-                            <th> Datejoined </th>
+                            <th> Date Joined </th>
                         </tr>
                     </thead>
                     <tbody class="text-light">

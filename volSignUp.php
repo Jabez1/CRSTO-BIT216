@@ -34,6 +34,13 @@ if ($connection->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $connection->error;
 }
+
+while ($row =  $worker->fetch_assoc()) {
+    if ($row["username"] == $username){
+        //update session variable
+        $_SESSION["profile"] = $row;
+    }
+}
     
 
 header("Location:volAddDocPage.php");

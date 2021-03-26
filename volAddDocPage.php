@@ -14,14 +14,12 @@
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
-    <a href="testGenerate.php"> 
+    <a> 
         <?php
         session_start();
         echo"Welcome {$_SESSION['username']}";
         ?>       
     </a>
-    <a href="volSignUpPage.php">Sign Up</a>
-    <a href="CTUpdateTestResult.php">Update Test Results</a>
     <a href="Logout.php">Log Out </a>
 </nav>
 <main>
@@ -36,19 +34,20 @@
 
 
                 <label>Document Type: </label>
-                <select class="custom-select" name="type" id="type">
-                    <option>Passport</option>
-                    <option>Certificate</option>
-                    <option>Visa</option>
-                    <option>Identification</option>
+                <select class="custom-select" name="docType" id="type">
+                    <option>PASSPORT</option>
+                    <option>CERTIFICATE</option>
+                    <option>VISA</option>
                 </select>
               </div>  
 
-            <label> </label>
+            <label>Expiry Date </label>
+            <input name="expiryDate" class="form-control" type="date" min="2021-03-09">
+
             <input required type="file" name="img" value="" class= "btn " 
-            onchange="document.getElementById('picFrame').src = window.URL.createObjectURL(this.files[0])"/> 
+            onchange="document.getElementById('frame').src = window.URL.createObjectURL(this.files[0])"/> 
             <?php
-                echo '<a><img id="picFrame" src="" width="10px" height="10px" /></a>';
+                echo '<a><img id="frame" src="" width="10px" height="10px" /></a>';
             ?>
 
             <div> 
