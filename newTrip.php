@@ -65,7 +65,6 @@
                     </thead>
                     <tbody class="text-light">
 					<?php
-					 session_start();
                         foreach ($_SESSION['tripArray'] as $index => $arrayRow) {
                             echo '<tr>';
                             echo '<td>'. $arrayRow['tripID'] .'</td>';

@@ -77,7 +77,7 @@ table th{
 	background-color: #0B132B;
 	text-align:center;
 	color: #ffffff;
-
+	position: sticky;
 }
 
 table th, td {

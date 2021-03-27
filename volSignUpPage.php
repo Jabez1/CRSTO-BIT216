@@ -14,6 +14,7 @@ session_start();
 if(isset($_SESSION['errorType'])){
     if($_SESSION['errorType']==1){
         echo '<script>alert("The username is in use");</script>';
+        unset($_SESSION['errorType']);
     }
 }
 ?>
