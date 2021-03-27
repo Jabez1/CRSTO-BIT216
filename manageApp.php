@@ -16,10 +16,8 @@
     <body>
     <main>
     <h1 class="text-center p-3"> Manage Application</h1>
-    <label class="align-self-start" id= "tripid">Trip ID:</label>
+
     
-    <div class="d-flex justify-content-right">
-        <div class="d-flex justify-content-between bg-light p-5 flex-column align-content-sm-center flex-sm-row">
 
     <div>
              <table class="table" id="CRSTOList">
@@ -38,6 +36,9 @@
                             echo '<td>'. $arrayRow['applicationID'] .'</td>';
                             echo '</tr>';
                      }
+                        if(!isset($_SESSION['applicationArray'])){
+                            header("Location:manageAppCheck.php");
+                        }
                         ?>
                     </tbody>
                     
