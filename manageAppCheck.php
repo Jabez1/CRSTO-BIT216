@@ -10,5 +10,7 @@ while ( $row =  $result->fetch_assoc() ) {
     $_SESSION["applicationArray"][] = $row;
 }
 
-header("Location:newTrip.php");
+if(!isset($_SESSION['applicationArray'])){
+    header("Location:InsertApp.php");
+}
 ?>
