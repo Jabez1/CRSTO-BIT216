@@ -27,6 +27,6 @@ while ( $row =  $result->fetch_assoc() ) {
     $_SESSION["tripArray"][] = $row;
 }
 
-//header("Location:newTrip.php");
+header("Location:newTrip.php");
 
 ?>
