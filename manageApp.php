@@ -60,9 +60,7 @@
     <br>
     <form class="d-flex flex-column" form action="manageAppCheck.php" method="post" >
         <br>
-        <input type="submit" class="btn w-50 align-self-center" value="ACCEPTED">
-        <br>
-        <input type="submit" class="btn w-50 align-self-center" value="REJECTED">
+        <a class="btn button" href="statusUpdatePage.php">Status</a>
 
     </form>
     </div>
