@@ -60,6 +60,9 @@
     <br>
     <form class="d-flex flex-column" form action="manageAppCheck.php" method="post" >
         <br>
+<<<<<<< HEAD
+        <a class="btn button" href="statusUpdatePage.php">Status</a>
+======= <br>
         <div class="d-flex justify-content-center align-items-center">
         <input type="radio" id="ACCEPTED" name ="status" value="ACCEPTED">
         <label for="ACCEPTED" class="align-self-center">ACCEPTED</label>
@@ -68,6 +71,10 @@
         <div class="d-flex justify-content-center align-items-center">
         <input type="radio" id="REJECTED"  name ="status" value="REJECTED">
         <label for="REJECTED" class="align-self-center">REJECTED</label>
+
+        </div>
+        <input type="submit" class="btn w-50 align-self-center" value="SAVE">
+>>>>>>> f146876a62a7f9310c47dcc51eacc4914046be0a
 
         </div>
         <input type="submit" class="btn w-50 align-self-center" value="SAVE">
