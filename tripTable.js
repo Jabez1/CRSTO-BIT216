@@ -20,13 +20,17 @@ function selectTrip(){
             }
             
             //change id of selected row
-            var rowSelected = tripTable.getElementsByTagName('tr')[rowId];
-            rowSelected.id = "selected";
-            console.log(rowSelected);
-            var tripSelected = rowSelected.getElementsByTagName('td')[0];
-            console.log(tripSelected.innerHTML);
-            var theForm = document.getElementById('tripForm');
-            theForm.value = tripSelected.innerHTML;
+            if(rowId>0){
+                var rowSelected = tripTable.getElementsByTagName('tr')[rowId];
+                rowSelected.id = "selected";
+                console.log(rowSelected);
+
+                var tripSelected = rowSelected.getElementsByTagName('td')[0];
+                console.log(tripSelected.innerHTML);
+                var theForm = document.getElementById('tripForm');
+                theForm.value = tripSelected.innerHTML;
+            }
+
         }
     }
 

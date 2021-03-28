@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="assignment.css" rel="stylesheet" type="text/css"/>
 </head>
+<?php
+session_start();
+if(isset($_SESSION['Application'])){
+echo "<script type='text/javascript'>alert('hi'); console.log('fuck');</script>";
+unset($_SESSION['Application']);
+}
+?>
 
 
 <body>
@@ -42,7 +49,7 @@
                 </thead>
                 <tbody class="text-light">
                 <?php
-                    session_start();
+
                     if(!isset($_SESSION['tripList'])){
                         header("Location:volGetTrip.php");
                     }
@@ -69,7 +76,7 @@
     <form class="d-flex flex-column" form action="volApplyTrip.php" method="post" >
         <div class="form-group">
             <label>Selected Trip ID: </label>
-            <input type="text" name= "tripID" class="form-control" id="tripForm"></input>
+            <input type="text" name= "tripID" class="form-control" id="tripForm" required></input>
         </div>  
 
         <br>
