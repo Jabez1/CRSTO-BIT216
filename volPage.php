@@ -10,12 +10,14 @@ session_start();
     <link href="assignment.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body onload="getVolunteerInfo.php">
+<body>
 <header>
 <img src="Images/logo.png" alt="LOGO" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
+    <a href="volTripPage.php">Apply For a Trip</a> 
     <a href="Logout.php">Log Out </a> 
+    
 </nav>
 
 <main>

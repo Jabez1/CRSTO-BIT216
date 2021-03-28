@@ -15,7 +15,7 @@ $userpass = $_POST['userpass'];
 $fullName = $_POST['fullName'];
 $phone = $_POST['phone'];
 
-//This is assuming only returnees do not need to log in, only new users will have to log in
+//Duplicate name
 while ($row =  $worker->fetch_assoc()) {
     if ($row["username"] == $username){
         //when user is found
@@ -26,7 +26,7 @@ while ($row =  $worker->fetch_assoc()) {
     }
 }
 
-$_SESSION['username'] = $username;
+
 $sql = "INSERT INTO Worker(username, userpass, fullName, phone, workerType) 
 VALUES ('$username', '$userpass', '$fullName', '$phone', 'Volunteer');";
 if ($connection->query($sql) === TRUE) {
@@ -35,6 +35,9 @@ if ($connection->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $connection->error;
 }
 
+$sql = "SELECT * FROM worker";
+$worker = $connection->query($sql);
+$_SESSION['username'] = $username;
 while ($row =  $worker->fetch_assoc()) {
     if ($row["username"] == $username){
         //update session variable
