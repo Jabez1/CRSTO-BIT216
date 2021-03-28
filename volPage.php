@@ -16,8 +16,8 @@ session_start();
 </header>
 <nav class="navbar justify-content-end p-0"> 
     <a href="volTripPage.php">Apply For a Trip</a> 
+    <a href="volAppPage.php">View Applications</a>
     <a href="Logout.php">Log Out </a> 
-    
 </nav>
 
 <main>
