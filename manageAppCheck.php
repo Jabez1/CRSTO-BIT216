@@ -10,6 +10,7 @@ while ( $row =  $result->fetch_assoc() ) {
 }
 
 
+
 header("Location:manageApp.php")
 ?>
 

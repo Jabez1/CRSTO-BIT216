@@ -26,12 +26,13 @@
 
     <div class="d-flex flex-column bg-light p-5 col-10">
         <div class="table-responsive p-0 bg-custom">
-        <table class="table" id="appTable">
+        <table class="table" id="appList">
                 <thead>
                     <tr>
-                        <th>Trip ID</th>
                         <th>Application ID</th>
+                        <th>Trip ID</th>
                         <th>Status</th>
+                        <th>Remarks</th>
                     </tr>
                 </thead>
                 <tbody class="text-light">
@@ -42,9 +43,10 @@
                     }
                     foreach ($_SESSION['appList'] as $index => $arrayRow) {
                         echo '<tr>';
-                        echo '<td>'. $arrayRow['tripID'] .'</td>';
                         echo '<td>'. $arrayRow['applicationID'] .'</td>';
+                        echo '<td>'. $arrayRow['tripID'] .'</td>';
                         echo '<td>'. $arrayRow['status'] .'</td>';
+                        echo '<td>'. $arrayRow['remarks'] .'</td>';
                         echo '</tr>';
                     }
                     unset($_SESSION['appList']);
