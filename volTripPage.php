@@ -19,10 +19,7 @@
     <a href="CTUpdateTestResult.php">Update Test Results</a>
     <a href="Logout.php">Log Out </a>
 </nav>
-<script type="text/javascript" src="tripTable.js">
-selectTrip();
-highlight_row();    
-</script>
+<script type="text/javascript" src="tripTable.js"></script>
 
 
 <main>
@@ -32,7 +29,7 @@ highlight_row();
     <br>
 
     <div class="d-flex flex-column bg-light p-5 col-10">
-    <div class="table-responsive p-0 bg-custom">
+        <div class="table-responsive p-0 bg-custom">
         <table class="table" id="tripList">
                 <thead>
                     <tr>
@@ -63,25 +60,24 @@ highlight_row();
 
                 </tbody>
         </table>
-
+        
     </div>
-
+    <script>
+    selectTrip();
+    </script>
     <br>
     <form class="d-flex flex-column" form action="testUpdate.php" method="post" >
         <div class="form-group">
-            <label>Results: </label>
-            <select class="custom-select" id="result" name="result">
-                <option>Positive</option>
-                <option>Negative</option>
-            </select>
+            <label>Selected Trip ID: </label>
+            <input type="text" name= "tripID" class="form-control" id="tripForm"></input>
         </div>  
 
         <br>
-        <input type="submit" class="btn w-50 align-self-center" value="Submit">
+        <input type="submit" class="btn w-50 align-self-center" value="Apply">
 
     </form>
-        </div>
     </div>
+</div>
 </div>
 </main>
 <footer>
@@ -91,4 +87,5 @@ highlight_row();
 </footer>
 </div>
 </body>
+
 </html>
