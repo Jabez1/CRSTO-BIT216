@@ -21,10 +21,9 @@ unset($_SESSION['Application']);
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
-    <a href="testGenerate.php">Generate Report</a>
-    <a href="CTRecordNewTest.php">Record New Tests</a>
-    <a href="CTUpdateTestResult.php">Update Test Results</a>
-    <a href="Logout.php">Log Out </a>
+    <a href="volTripPage.php">Apply For a Trip</a> 
+    <a href="volAppPage.php">View Applications</a>
+    <a href="Logout.php">Log Out </a> 
 </nav>
 <script type="text/javascript" src="tripTable.js"></script>
 

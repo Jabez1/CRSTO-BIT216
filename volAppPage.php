@@ -21,36 +21,35 @@
 
 <main>
     <div class="container d-flex flex-column justify-content-center align-items-center p-4">
-    <h1>Test Report</h1>
+    <h1>Application List</h1>
     <div id="container" class="d-flex flex-column bg-light p-5 col-10">
             <div class="table-responsive p-0 bg-custom">
                 <table class="table" id="testList">
                         <thead>
                             <tr>
-                                <th>Test ID</th>
-                                <th>Test Date</th>
-                                <th>Result </th>
-                                <th>Result Date</th>
+                                <th>Trip ID</th>
+                                <th>Trip Date</th>
+                                <th>Description</th>
                                 <th>Status</th>
+                                <th>Remarks</th>
                             </tr>
                         </thead>
                         <tbody class="text-light">
                             <?php
                             session_start();
-                            foreach ($_SESSION['testArray'] as $index => $arrayRow) {
+                            if(!isset($_SESSION['appArray'])){
+                                header("Location:volAppTable.php");
+                            }
+                            foreach ($_SESSION['appArray'] as $index => $arrayRow) {
                                 echo '<tr>';
-                                echo '<td>'. $arrayRow['testID'] .'</td>';
-                                echo '<td>'. $arrayRow['testDate'] .'</td>';
-                                if($arrayRow['result'] == null){
-                                    echo '<td>TBD</td>';
-                                    echo '<td>TBD</td>';
-                                }else{
-                                    echo '<td>'. $arrayRow['result'] .'</td>';
-                                    echo '<td>'. $arrayRow['resultDate'] .'</td>';
-                                }
+                                echo '<td>'. $arrayRow['tripID'] .'</td>';
+                                echo '<td>'. $arrayRow['tripDate'] .'</td>';
+                                echo '<td>'. $arrayRow['description'] .'</td>';
                                 echo '<td>'. $arrayRow['status'] .'</td>';
+                                echo '<td>'. $arrayRow['remarks'] .'</td>';
                                 echo '</tr>';
                             }
+                            unset($_SESSION['appArray']);
                             ?>
                         </tbody>
                 </table>
