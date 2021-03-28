@@ -66,7 +66,7 @@
     selectTrip();
     </script>
     <br>
-    <form class="d-flex flex-column" form action="testUpdate.php" method="post" >
+    <form class="d-flex flex-column" form action="volApplyTrip.php" method="post" >
         <div class="form-group">
             <label>Selected Trip ID: </label>
             <input type="text" name= "tripID" class="form-control" id="tripForm"></input>
