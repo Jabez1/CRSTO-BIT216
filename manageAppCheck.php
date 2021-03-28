@@ -3,12 +3,14 @@ include_once 'database.php';
 session_start();
 
 $sql = "SELECT * FROM `application`";
-$_SESSION['applicationArray']= [];
+$_SESSION['appList']= [];
 
 $result = $connection->query($sql);
 while ( $row =  $result->fetch_assoc() ) {
-    $_SESSION["applicationArray"][] = $row;
+    $_SESSION["appList"][] = $row;
 }
 
 
+header("Location:manageApp.php")
 ?>
+

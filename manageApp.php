@@ -7,54 +7,75 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
     <link rel="stylesheet" type="text/css" href="assignment.css">
 </head>
+<body>
 <header>
+<img src="Images/logo.png" alt="logo" id="logo">
 </header>
-<nav class="navbar justify-content-end p-0">
-    <a href="newTrip.php">Organize Trip </a>
+<nav class="navbar justify-content-end p-0"> 
+    <a href="newTrip.php">Organize Trip</a>
     <a href="Logout.php">Log Out </a>
-    </nav>
-    <body>
-    <main>
-    <h1 class="text-center p-3"> Manage Application</h1>
+</nav>
+<script type="text/javascript" src="appTable.js"></script>
 
-    
 
-    <div>
-             <table class="table" id="CRSTOList">
-                    <thead>
-                        <tr>
-                            <th> Trip ID </th>
-                            <th> Application ID </th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-light">
-                    <?php
-					 session_start();
-                        foreach ($_SESSION['applicationArray'] as $index => $arrayRow) {
-                            echo '<tr>';
-                            echo '<td>'. $arrayRow['tripID'] .'</td>';
-                            echo '<td>'. $arrayRow['applicationID'] .'</td>';
-                            echo '</tr>';
-                     }
-                        if(!isset($_SESSION['applicationArray'])){
-                            header("Location:manageAppCheck.php");
-                        }
-                        ?>
-                    </tbody>
-                    
-                </table>
-        </div>
-    </div>  
+<main>
+<div class="container p-2">
+    <div class="d-flex flex-column align-items-center">
+    <h1 class="p-3">Manage Application</h1>
+    <br>
+
+    <div class="d-flex flex-column bg-light p-5 col-10">
+        <div class="table-responsive p-0 bg-custom">
+        <table class="table" id="appList">
+                <thead>
+                    <tr>
+                        <th>Trip ID</th>
+                        <th>Application ID</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-light">
+                <?php
+                    session_start();
+                    if(!isset($_SESSION['appList'])){
+                        header("Location:manageAppCheck.php");
+                    }
+                    foreach ($_SESSION['appList'] as $index => $arrayRow) {
+                        echo '<tr>';
+                        echo '<td>'. $arrayRow['tripID'] .'</td>';
+                        echo '<td>'. $arrayRow['applicationID'] .'</td>';
+                        echo '<td>'. $arrayRow['status'] .'</td>';
+                        echo '</tr>';
+                    }
+                    unset($_SESSION['appList']);
+                ?>
+
+                </tbody>
+        </table>
+        
+    </div>
+    <script>
+    selectApp();
+    </script>
+    <br>
+    <form class="d-flex flex-column" form action="manageAppCheck.php" method="post" >
+
+        <br>
+        <input type="submit" class="btn w-50 align-self-center" value="Apply">
+        <input type="submit" class="btn w-50 align-self-center" value="Apply">
+
+
+    </form>
+    </div>
+</div>
+</div>
 </main>
 <footer>
     <p>If there are any issues, contact us at: 012983312
     </p>
     Copyright &copy; 2020
-    </footer>
-</body>
-
-    
-
+</footer>
 </div>
+</body>
 
 </html>
