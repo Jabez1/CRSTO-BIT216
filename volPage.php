@@ -15,6 +15,7 @@ session_start();
 <img src="Images/logo.png" alt="LOGO" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
+    <a href="volPage.php">Profile Page</a> 
     <a href="volTripPage.php">Apply For a Trip</a> 
     <a href="volAppPage.php">View Applications</a>
     <a href="Logout.php">Log Out </a> 
@@ -22,8 +23,9 @@ session_start();
 
 <main>
     <div id="container" class="container bg-light">
-        <div class="d-flex justify-content-md-between p-4 col-12 col-sm-10">
-            <div class="d-flex flex-column align-items-center p-4 col-12 col-sm-12 col-md-7">
+    <div class="row">
+        <div class="p-4 col-12 col-lg-5">
+            <div class="d-flex flex-column align-items-center p-4">
                 <h1>Profile Details</h1>
                 <div id="picFrame">
                     <img src="Images/picture.jpg" onError="this.onerror=null;this.src='Images/defaultPfp.jpg';" />
@@ -35,43 +37,40 @@ session_start();
                 <a class="btn button" href="volUpdate.php">Manage Profile</a>
                 <!-- documents use case <a class="btn button" href="manageDocuments.php">Manage Documents</a>-->
             </div>
-        
-            <!-- 
-            <div class="bg-custom table col col-sm-12 col-md-7 p-0" id="applicationTable">
-                <table id="patTable" class= "text-light">
-                    <thead>
-                        <tr>
-                            <th> Application ID </th>
-                            <th> Application Date </th>
-                            <th> Status </th>
-                            <th> Review Date </th>
-                            <th> Remarks </th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        </div>
+        <div class="table-responsive p-4 bg-light col-lg-7">
+            <div class="p-4">
+                <table class="table" id="CRSTOList">
+                        <thead>
+                            <tr>
+                                <th> Document Type </th>
+                                <th> Expiry Date </th>
+                                <th> Preview </th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-light">
                         <?php
-                        foreach ($_SESSION['testArray'] as $index => $arrayRow) {
-                            echo '<tr>';
-                            echo '<td>'. $arrayRow['testID'] .'</td>';
-                            echo '<td>'. $arrayRow['testDate'] .'</td>';
-                            if($arrayRow['result'] == null){
-                                echo '<td>TBD</td>';
-                                echo '<td>TBD</td>';
-                            }else{
-                                echo '<td>'. $arrayRow['result'] .'</td>';
-                                echo '<td>'. $arrayRow['resultDate'] .'</td>';
+                            if(!isset($_SESSION['docArray'])){
+                                header("Location:volUpdate.php");
                             }
-                            echo '<td>'. $arrayRow['status'] .'</td>';
-                            echo '</tr>';
+                            foreach ($_SESSION['docArray'] as $index => $arrayRow) {
+                                echo '<tr>';
+                                echo '<td>'. $arrayRow['docType'] .'</td>';
+                                echo '<td>'. $arrayRow['expiryDate'] .'</td>';
+                                echo '<td><img src="Images/'. $arrayRow['imgFile'] .'" id="doc" ></td>';
+                                echo '</tr>';
                         }
-                        ?>
-                        <tr>
-                        </tr>    
-                    </tbody>
+                        
+                            ?>
+                        </tbody>
+                        
                 </table>
+                <br>
+                
             </div>
-                    -->
+        </div>
         </div>    
+    </div>
     </div>
     
 </main>

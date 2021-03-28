@@ -3,36 +3,42 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Update New Test Results</title>
+    <title>Apply for a Trip</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="assignment.css" rel="stylesheet" type="text/css"/>
 </head>
 <?php
 session_start();
-if(isset($_SESSION['Application'])){
-echo "<script type='text/javascript'>alert('hi'); console.log('fuck');</script>";
-unset($_SESSION['Application']);
+if(isset($_SESSION['appError'])){
+    if($_SESSION['appError']==1){
+        echo '<script> alert("You have already applied for that trip"); </script>';
+       
+    }
+    elseif($_SESSION['appError']==0){
+        echo '<script> alert("Application submitted successfully!"); </script>';
+    }
 }
+
 ?>
 
-
 <body>
+
 <header>
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
+    <a href="volPage.php">Profile Page</a> 
     <a href="volTripPage.php">Apply For a Trip</a> 
     <a href="volAppPage.php">View Applications</a>
     <a href="Logout.php">Log Out </a> 
 </nav>
-<script type="text/javascript" src="tripTable.js"></script>
+<script type="text/javascript" src="selectTable.js"></script>
 
 
 <main>
 <div class="container p-2">
     <div class="d-flex flex-column align-items-center">
-    <h1 class="p-3">Update Test Results</h1>
-    <br>
+    <h1 class="p-3">Apply for a Trip</h1>
 
     <div class="d-flex flex-column bg-light p-5 col-10">
         <div class="table-responsive p-0 bg-custom">
@@ -52,6 +58,11 @@ unset($_SESSION['Application']);
                     if(!isset($_SESSION['tripList'])){
                         header("Location:volGetTrip.php");
                     }
+                    else{
+                        //the page wouldnt show the alert because it kept refreshing 
+                        //and would reset the alert if put elsewhere
+                        unset($_SESSION['appError']);
+                    }
                     foreach ($_SESSION['tripList'] as $index => $arrayRow) {
                         echo '<tr>';
                         echo '<td>'. $arrayRow['tripID'] .'</td>';
@@ -62,6 +73,7 @@ unset($_SESSION['Application']);
                         echo '</tr>';
                     }
                     unset($_SESSION['tripList']);
+                    
                 ?>
 
                 </tbody>
@@ -69,13 +81,13 @@ unset($_SESSION['Application']);
         
     </div>
     <script>
-    selectTrip();
+    selectTable("tripList", "tripForm");
     </script>
     <br>
-    <form class="d-flex flex-column" form action="volApplyTrip.php" method="post" >
+    <form class="d-flex flex-column" form action="volTripApply.php" method="post" >
         <div class="form-group">
             <label>Selected Trip ID: </label>
-            <input type="text" name= "tripID" class="form-control" id="tripForm" required></input>
+            <input type="text" name= "tripID" class="form-control" id="tripForm" required readonly></input>
         </div>  
 
         <br>
@@ -84,6 +96,7 @@ unset($_SESSION['Application']);
     </form>
     </div>
 </div>
+
 </div>
 </main>
 <footer>

@@ -24,7 +24,7 @@ function selectApp(){
             rowSelected.id = "selected";
             console.log(rowSelected);
             var appSelected = rowSelected.getElementsByTagName('td')[0];
-            console.log(apppSelected.innerHTML);
+            console.log(appSelected.innerHTML);
             var theForm = document.getElementById('appForm');
             theForm.value = appSelected.innerHTML;
         }

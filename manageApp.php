@@ -26,7 +26,7 @@
 
     <div class="d-flex flex-column bg-light p-5 col-10">
         <div class="table-responsive p-0 bg-custom">
-        <table class="table" id="appTable">
+        <table class="table" id="appList">
                 <thead>
                     <tr>
                         <th>Trip ID</th>

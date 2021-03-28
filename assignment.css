@@ -158,6 +158,12 @@ img{
     object-fit: cover;
 }
 
+#doc{
+	width:150px;
+	height:80px;
+	object-fit: cover;
+}
+
 #picFrame{
 	text-align: center;
     height: 200px;

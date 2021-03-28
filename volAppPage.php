@@ -14,9 +14,10 @@
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
+    <a href="volPage.php">Profile Page</a> 
     <a href="volTripPage.php">Apply For a Trip</a> 
+    <a href="volAppPage.php">View Applications</a>
     <a href="Logout.php">Log Out </a> 
-    
 </nav>
 
 <main>

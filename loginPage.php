@@ -34,9 +34,9 @@ if(isset($_SESSION['loginFail'])){
 
             <form class="form-group" action="loginCheck.php" method="post">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Enter Username" class="form-control" >
+                <input type="text" name="username" id="username" placeholder="Enter Username" class="form-control" required>
                 <label for="userpass"> Password </label>
-                <input type="password" name="userpass" id="userpass" placeholder="Enter Password" class="form-control" >
+                <input type="password" name="userpass" id="userpass" placeholder="Enter Password" class="form-control" required>
                 <br>
                 <div class= "d-flex justify-content-center">
                     <input type="submit" value="Log in" class="btn">

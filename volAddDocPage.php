@@ -17,21 +17,31 @@
     <a> 
         <?php
         session_start();
-        echo"Welcome {$_SESSION['username']}";
+        echo"Welcome {$_SESSION['profile']['username']}";
         ?>       
     </a>
     <a href="Logout.php">Log Out </a>
 </nav>
 <main>
-    <div class="container p-2 col-3 col-sm-5 col-md-7">
-        <div class="d-flex flex-column align-items-center">
+    <div class="container">
+    <div class="row">
+        <div class="col">
 
-        <h1 class="p-3">Add a Travel/Identification Document</h1>
+        <h1 class="p-2">Add a Travel/Identification Document</h1>
         <br>
         <form method="POST" action="volAddDoc.php" 
-              enctype="multipart/form-data" class="d-flex flex-column bg-light p-5 col-10"> 
+              enctype="multipart/form-data" class="d-flex flex-column bg-light p-5 col-12"> 
               <div class="form-group">
+              <div class="d-flex flex-column align-items-center"> 
+               
 
+                <img id="frame" src="" width="10px" height="10px"
+                onerror="if (this.src != 'Images/AddImage.png') this.src = 'Images/AddImage.png';" >
+                 <input required type="file" name="img" value="" accept="image/*" class= "btn p-2" 
+                onchange="document.getElementById('frame').src = window.URL.createObjectURL(this.files[0])"/> 
+
+
+               </div> 
 
                 <label>Document Type: </label>
                 <select class="custom-select" name="docType" id="type">
@@ -43,19 +53,13 @@
 
             <label>Expiry Date </label>
             <input name="expiryDate" class="form-control" type="date" min="2021-03-09">
-
-            <input required type="file" name="img" value="" class= "btn " 
-            onchange="document.getElementById('frame').src = window.URL.createObjectURL(this.files[0])"/> 
-            <?php
-                echo '<a><img id="frame" src="" width="10px" height="10px" /></a>';
-            ?>
-
-            <div> 
-                <input type="submit" name="upload" class= "btn" value="Upload"/> 
-                <a href="volPage.php"  class= "btn button"> Done </a>
-
-            </div> 
+            <br>
+            <input type="submit" name="upload" class= "btn col-4 align-self-center" value="Add"/> 
+            <div class="row justify-content-end"> 
+            <a href="volPage.php"  class= "btn button col-1"> Done </a>
+            </div>
         </form> 
+        </div>
         </div>
     </div>
 
