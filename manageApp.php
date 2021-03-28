@@ -59,11 +59,10 @@
     </script>
     <br>
     <form class="d-flex flex-column" form action="manageAppCheck.php" method="post" >
-
         <br>
-        <input type="submit" class="btn w-50 align-self-center" value="Apply">
-        <input type="submit" class="btn w-50 align-self-center" value="Apply">
-
+        <input type="submit" class="btn w-50 align-self-center" value="ACCEPTED">
+        <br>
+        <input type="submit" class="btn w-50 align-self-center" value="REJECTED">
 
     </form>
     </div>
