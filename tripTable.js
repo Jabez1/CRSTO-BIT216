@@ -22,13 +22,12 @@ function selectTrip(){
             //change id of selected row
             var rowSelected = tripTable.getElementsByTagName('tr')[rowId];
             rowSelected.id = "selected";
+            console.log(rowSelected);
+            var tripSelected = rowSelected.getElementsByTagName('td')[0];
+            console.log(tripSelected.innerHTML);
+            var theForm = document.getElementById('tripForm');
+            theForm.value = tripSelected.innerHTML;
         }
     }
-
-    var tripSelected = document.getElementById('selected');
-    console.log(tripSelected);
-    
-    var theForm = document.getElementById('tripForm');
-    theForm.value="2";
 
 }
