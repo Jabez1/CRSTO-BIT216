@@ -1,42 +1,21 @@
-<?php
-include_once 'database.php';
-session_start();
-$sql = "SELECT * FROM test";
-
-//fetches the test table data
-$result = $connection->query($sql);
-
-$_SESSION['testArray']= [];
-while($test = $result->fetch_assoc()) {
-    $_SESSION['testArray'][] = $test;
-}
-header("Location:CTGenerate.php");
-?>
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Generate Test Report</title>
+    <title>View Application Status</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="assignment.css" rel="stylesheet" type="text/css"/>
-    <script>
-        function goBack() {
-          window.history.back();
-    }
-    </script>
 </head>
 
-<body onload="generateReport()">
+<body>
 
 <header>
 <img src="Images/logo.png" alt="logo" id="logo">
 </header>
 <nav class="navbar justify-content-end p-0"> 
-
-    <a href="testGenerate.php">Generate Report</a>
-    <a onclick="goBack()">Previous Page </a>
-    <a href="Logout.php">Log Out </a>
+    <a href="volTripPage.php">Apply For a Trip</a> 
+    <a href="Logout.php">Log Out </a> 
     
 </nav>
 
