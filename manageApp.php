@@ -26,7 +26,7 @@
 
     <div class="d-flex flex-column bg-light p-5 col-10">
         <div class="table-responsive p-0 bg-custom">
-        <table class="table" id="appList">
+        <table class="table" id="appTable">
                 <thead>
                     <tr>
                         <th>Trip ID</th>
@@ -58,12 +58,7 @@
     selectApp();
     </script>
     <br>
-    <form class="d-flex flex-column" form action="manageAppCheck.php" method="post" >
-        <br>
-        <a class="btn button" href="statusUpdatePage.php">Status</a>
-        <br>
-        <a class="btn button" href="statusUpdatePage.php">Status</a>
-
+    <form class="d-flex flex-column" form action="updateApp.php" method="post" >
         <div class="d-flex justify-content-center align-items-center">
         <input type="radio" id="ACCEPTED" name ="status" value="ACCEPTED">
         <label for="ACCEPTED" class="align-self-center">ACCEPTED</label>
@@ -72,12 +67,14 @@
         <div class="d-flex justify-content-center align-items-center">
         <input type="radio" id="REJECTED"  name ="status" value="REJECTED">
         <label for="REJECTED" class="align-self-center">REJECTED</label>
-
+        </div>
+        <div>
+            <label for="remarks"> Remarks </label>
+            <input type="text" name="remarks" id="remarks" class="form-control">
+            <label for="appid"> Appid </label>
+            <input type="text" name="appid" id="appForm" class="form-control">
         </div>
         <input type="submit" class="btn w-50 align-self-center" value="SAVE">
-        </div>
-        <input type="submit" class="btn w-50 align-self-center" value="SAVE">
->>>>>>> bf1366ed9fc7ed5582c66de61bc25e55a81d085b
     </form>
     </div>
 </div>
