@@ -32,16 +32,19 @@ session_start();
                 
                 <form  class="form-group" action="volUpdate.php" method="post">
                    <label for="username"> Username </label>
-                   <input type="text" name="username" id="username" class="form-control" value="<?php echo $_SESSION['profile']['username']; ?>">
+                   <input type="text" name="username" id="username" class="form-control" value="<?php echo $_SESSION['profile']['username']; ?>" required>
 
-                   <label for="userpass"> Password </label>
-                   <input type="text" name="userpass" id="userpass" class="form-control">
+                   <label for="userpass"> Old Password </label>
+                   <input type="password" name="userpass" id="userpass" class="form-control" value="<?php echo $_SESSION['profile']['userpass']; ?>" required>
+
+                   <label for="userpass"> New Password </label>
+                   <input type="password" name="userpass" id="userpass" class="form-control">
 
                    <label for="fullname"> Full Name </label>
-                   <input type="text" name="fullname" id="fullname" class="form-control" value="<?php echo $_SESSION['profile']['fullName']; ?>">
+                   <input type="text" name="fullname" id="fullname" class="form-control" value="<?php echo $_SESSION['profile']['fullName']; ?>" required>
 
                    <label for="phone"> Phone Number </label>
-                   <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $_SESSION['profile']['phone']; ?>">
+                   <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $_SESSION['profile']['phone']; ?>" required>
 
                    <br>
                    <div class="row justify-content-around">
@@ -65,7 +68,7 @@ session_start();
                 <tbody class="text-light">
                 <?php
                     if(!isset($_SESSION['docArray'])){
-                        header("Location:volUpdate.php");
+                        header("Location:volUpdateDoc.php");
                     }
                     foreach ($_SESSION['docArray'] as $index => $arrayRow) {
                         echo '<tr>';
@@ -84,7 +87,7 @@ session_start();
             <br>
             <form  class="form-group" action="volUpdateDoc.php" method="post">
                    <label for="selDoc"> Selected Document ID </label>
-                   <input type="text" name="selDoc" id="docForm" class="form-control" readonly>
+                   <input type="text" name="selDoc" id="docForm" class="form-control" readonly required>
                    <div class="row justify-content-around">
                    <input type="submit" onclick="return confirm('Are you sure you want to delete this document?')" value="Delete Selected Document" class="btn col-5">
                         <a class="btn button col-5" href="volAddDoc.php">Add New Document</a>

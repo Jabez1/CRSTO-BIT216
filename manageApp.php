@@ -61,6 +61,7 @@
     </script>
     <br>
     <form class="d-flex flex-column" form action="updateApp.php" method="post" >
+    <div class="row justify-content-around">
         <div class="d-flex justify-content-center align-items-center">
         <input type="radio" id="ACCEPTED" name ="status" value="ACCEPTED">
         <label for="ACCEPTED" class="align-self-center">ACCEPTED</label>
@@ -70,6 +71,7 @@
         <input type="radio" id="REJECTED"  name ="status" value="REJECTED">
         <label for="REJECTED" class="align-self-center">REJECTED</label>
         </div>
+    </div>
         <div>
             <label for="remarks"> Remarks </label>
             <input type="text" name="remarks" id="remarks" class="form-control">

@@ -5,8 +5,6 @@ $username =$_SESSION['profile']['username'];
 $docID = $_POST['selDoc'];
 
 
-
-
 $sql = "DELETE FROM document WHERE docID = '$docID'";
 
 

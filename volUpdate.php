@@ -38,5 +38,5 @@ while ($row =  $result->fetch_assoc() ) {
 }
 
 
-header("Location:volUpdatePage.php");
+header("Location:volPage.php");
 ?>

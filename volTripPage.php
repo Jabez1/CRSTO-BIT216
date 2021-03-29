@@ -72,7 +72,7 @@ if(isset($_SESSION['appError'])){
                         echo '<td>'. $arrayRow['numVolunteers'] .'</td>';
                         echo '</tr>';
                     }
-                    //unset($_SESSION['tripList']);
+                    unset($_SESSION['tripList']);
                     
                 ?>
 

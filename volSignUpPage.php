@@ -36,26 +36,26 @@ if(isset($_SESSION['errorType'])){
     <form form action="volSignUp.php" method="post" class="d-flex flex-column bg-light p-5 col-10">
         <div class="form-group">
             <label>Username: </label>
-            <input type="text" name= "username" class="form-control" placeholder="Enter Username">   
+            <input type="text" name= "username" class="form-control" placeholder="Enter Username" required>   
         </div>
 
         <div class="form-group">
             <label>Password: </label>
-            <input type="password" name= "userpass" class="form-control" placeholder="Enter Password">   
+            <input type="password" name= "userpass" class="form-control" placeholder="Enter Password" required>   
         </div>  
 
         <div class="form-group">
             <label>Confirm Password: </label>
-            <input type="password" name= "userpass2" class="form-control" placeholder="Enter Password">   
+            <input type="password" name= "userpass2" class="form-control" placeholder="Confirm Password" required>   
         </div>  
 
         <div class="form-group">
             <label>Full Name: </label>
-            <input type="text" name= "fullName" class="form-control" placeholder="Enter Full Name">   
+            <input type="text" name= "fullName" class="form-control" placeholder="Enter Full Name" required>   
         </div>  
         <div class="form-group">
             <label>Phone Number: </label>
-            <input type="text" name= "phone" class="form-control" placeholder="Enter Phone Number">   
+            <input type="text" name= "phone" class="form-control" placeholder="Enter Phone Number" required>   
         </div>  
         <br>
         <input type="submit" class="btn w-50 align-self-center" placeholder="Enter Comments (If Any)">
