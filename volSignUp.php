@@ -37,7 +37,7 @@ if ($connection->query($sql) === TRUE) {
 
 $sql = "SELECT * FROM worker";
 $worker = $connection->query($sql);
-$_SESSION['username'] = $username;
+$_SESSION['profile']['username'] = $username;
 while ($row =  $worker->fetch_assoc()) {
     if ($row["username"] == $username){
         //update session variable

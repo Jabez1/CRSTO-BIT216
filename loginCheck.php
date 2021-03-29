@@ -15,7 +15,6 @@ while ( $row =  $result->fetch_assoc() ) {
     if ($row['username']== $username && $row["userpass"]==$password) {
         echo "Login Successful";
         //sets session variable username
-        $_SESSION['username'] = $username;
         $_SESSION['profile'] = $row;
         //check workerType
         if($row['workerType']== "Volunteer"){

@@ -1,7 +1,7 @@
 <?php
 include_once 'database.php';
 session_start();
-$username = $_SESSION['username'];
+$username = $_SESSION['profile']['username'];
 
 if(isset($_POST['username'])){
     $username = $_POST['username'];
@@ -14,7 +14,7 @@ if(isset($_POST['username'])){
 
     $sql = "UPDATE worker         
             SET username = '$username', userpass = '$userpass', fullName = '$fullname', phone = '$phone' 
-            WHERE username = '{$_SESSION['username']}'";
+            WHERE username = '{$_SESSION['profile']['username']}'";
 
 
     if ($connection->query($sql) === TRUE) {

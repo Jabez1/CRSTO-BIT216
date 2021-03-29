@@ -6,7 +6,7 @@
     <title>Record New Test Results</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="assignment.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="inputDisplay.js"></script>
+    <script type="text/javascript" src="inputValidate.js"></script>
 
 </head>
 <body>
@@ -52,12 +52,18 @@
               </div>  
 
             <label>Expiry Date </label>
-            <input name="expiryDate" class="form-control" type="date" min="2021-03-09">
+            <?php
+            $today = date("Y-m-d");
+            echo '<input name="expiryDate" class="form-control" type="date" id="datePicker" min="'. $today .'">';
+            ?>
             <br>
             <input type="submit" name="upload" class= "btn col-4 align-self-center" value="Add"/> 
             <div class="row justify-content-end"> 
             <a href="volPage.php"  class= "btn button col-1"> Done </a>
             </div>
+            <script>
+            //dateValidate('datePicker');
+            </script>
         </form> 
         </div>
         </div>

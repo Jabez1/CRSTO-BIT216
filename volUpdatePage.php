@@ -74,18 +74,19 @@ session_start();
                         echo '<td>'. $arrayRow['expiryDate'] .'</td>';
                         echo '<td><img src="Images/'. $arrayRow['imgFile'] .'" id="doc" ></td>';
                         echo '</tr>';
-                }
+                   }
+                   unset($_SESSION['docArray']);
                 
                     ?>
                 </tbody>
                     
             </table>
             <br>
-            <form  class="form-group" action="volUpdate.php" method="post">
+            <form  class="form-group" action="volUpdateDoc.php" method="post">
                    <label for="selDoc"> Selected Document ID </label>
                    <input type="text" name="selDoc" id="docForm" class="form-control" readonly>
                    <div class="row justify-content-around">
-                   <input type="submit" value="Delete Selected Document" class="btn col-5">
+                   <input type="submit" onclick="return confirm('Are you sure you want to delete this document?')" value="Delete Selected Document" class="btn col-5">
                         <a class="btn button col-5" href="volAddDoc.php">Add New Document</a>
                     </div>
             </form>

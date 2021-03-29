@@ -4,7 +4,7 @@ session_start();
  
 $documentType = $_POST['docType'];
 $expiryDate = $_POST['expiryDate'];
-$username = $_SESSION['username'];
+$username = $_SESSION['profile']['username'];
 
 
 if (isset($_POST['upload'])) { 
