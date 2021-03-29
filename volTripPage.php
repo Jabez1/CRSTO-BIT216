@@ -56,7 +56,7 @@ if(isset($_SESSION['appError'])){
                 <?php
 
                     if(!isset($_SESSION['tripList'])){
-                        header("Location:volGetTrip.php");
+                        header("Location:volTripTable.php");
                     }
                     else{
                         //the page wouldnt show the alert because it kept refreshing 
@@ -72,7 +72,7 @@ if(isset($_SESSION['appError'])){
                         echo '<td>'. $arrayRow['numVolunteers'] .'</td>';
                         echo '</tr>';
                     }
-                    unset($_SESSION['tripList']);
+                    //unset($_SESSION['tripList']);
                     
                 ?>
 

@@ -22,11 +22,11 @@ while ( $row =  $result->fetch_assoc() ) {
             header("Location:volPage.php");
         }
         else{
-            if($row['position']== "Staff"){
+            if($row['position']!= "Manager"){
                 $_SESSION["loginFail"] = 0;
                 header("Location:newTrip.php");
             }
-            elseif($row['position']== "Manager"){
+            else{
                 $_SESSION['loginFail'] = 0;
                 header("Location:staffPage.php");
             }  

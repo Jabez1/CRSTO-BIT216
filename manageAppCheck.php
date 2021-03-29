@@ -5,7 +5,7 @@ $username = $_SESSION[profile][username];
 $sql = "SELECT a.tripID, a.applicationID, a.status, a.remarks FROM application a
         JOIN Trip t 
         ON a.tripID = t.tripID
-        WHERE a.username = '$username' ";
+        WHERE t.username = '$username' ";
 $_SESSION['appList']= [];
 
 $result = $connection->query($sql);
