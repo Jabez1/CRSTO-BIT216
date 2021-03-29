@@ -7,7 +7,7 @@
     <title>CRSTO </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
     <link rel="stylesheet" type="text/css" href="assignment.css">
-    
+    <script type="text/javascript" src="inputValidate.js"></script>
 </head>
 <?php
 session_start();
@@ -37,6 +37,7 @@ if(isset($_SESSION['loginFail'])){
                 <input type="text" name="username" id="username" placeholder="Enter Username" class="form-control" required>
                 <label for="userpass"> Password </label>
                 <input type="password" name="userpass" id="userpass" placeholder="Enter Password" class="form-control" required>
+
                 <br>
                 <div class= "d-flex justify-content-center">
                     <input type="submit" value="Log in" class="btn">
